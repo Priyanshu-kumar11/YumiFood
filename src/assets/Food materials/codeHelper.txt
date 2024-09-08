@@ -1,0 +1,62 @@
+
+// tailwind configuration 
+
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+
+
+// installing react icons 
+
+npm i react-icons
+
+
+// Hero object
+ 
+    {
+      url: 'https://res.cloudinary.com/ehizeex-shop/image/upload/v1672672076/NetflixApp/burger_emxbtv.jpg'
+    },
+    {
+      url: 'https://res.cloudinary.com/ehizeex-shop/image/upload/v1672672452/NetflixApp/pizza_osjb4f.jpg'
+    },
+    {
+      url: 'https://res.cloudinary.com/ehizeex-shop/image/upload/v1672672612/NetflixApp/ric_a4ewxo.jpg',
+    },
+
+
+// 
+
+//quick delivery image 
+
+https://res.cloudinary.com/ehizeex-shop/image/upload/v1672676822/NetflixApp/FC_two_phones.6ec9a842f905769677f9_m91off.webp
+
+
+// dummy text 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            molestiae delectus culpa hic assumenda, voluptate reprehenderit
+            dolore autem cum ullam sed odit perspiciatis. Doloribus quos velit,
+            eveniet ex deserunt fuga? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Voluptatum molestiae delectus culpa hic assumenda,
+            voluptate reprehenderit dolore autem cum ullam sed odit
+            perspiciatis. Doloribus quos velit, eveniet ex deserunt fuga? Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            molestiae delectus culpa hic assumenda, voluptate reprehenderit
+            dolore autem cum ullam sed odit perspiciatis. Doloribus quos velit,
+            eveniet ex deserunt fuga?
+
+
+// splide installation
+https://www.npmjs.com/package/@splidejs/react-splide
+
+
+// react slide import and css 
+
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+
+
