@@ -15,13 +15,17 @@ function App() {
   const handleAdd = () => {
     setCount(count+1)
   }
+  const handleMinus = () => {
+    if(count>0)
+    {setCount(count-1)}
+  }
 
   return (
     <>
       <BrowserRouter>
         <Header count={count}/>
         <Routes>
-          <Route path="/" element={<Home handleAdd={handleAdd}/>} />
+          <Route path="/" element={<Home handleAdd={handleAdd} handleMinus={handleMinus}/>} />
           <Route path="/aboutus" element={<AboutUs/>} />
           <Route path="/ourfood" element={<OurFood/>} />
           <Route path="/signin" element={<SignIn/>}/>

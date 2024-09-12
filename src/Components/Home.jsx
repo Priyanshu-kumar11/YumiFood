@@ -3,12 +3,12 @@ import Hero from './Hero'
 import Delivery from './Delivery'
 import TopPicks from './TopPicks'
 
-const Home = ({handleAdd}) => {
+const Home = ({handleAdd,handleMinus}) => {
   return (
     <div>
       <Hero/>
       <Delivery/>
-      <TopPicks handleAdd={handleAdd}/>
+      <TopPicks handleAdd={handleAdd} handleMinus={handleMinus}/>
     </div>
   )
 }

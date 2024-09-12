@@ -3,8 +3,10 @@ import { topPicks } from "../assets/Food materials/data/data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { IoAddCircle } from "react-icons/io5";
+import {  FaCircleMinus } from "react-icons/fa6";
 
-const TopPicks = ({handleAdd}) => {
+const TopPicks = ({handleAdd, handleMinus}) => {
   const settings = {
     dots: true,
     infinite: false,
@@ -58,9 +60,13 @@ const TopPicks = ({handleAdd}) => {
               <div className="flex flex-col justify-center items-center gap-2 p-4">
                 <p className="text-xl font-semibold uppercase">{item.title}</p>
                 <p className="text-xl font-semibold uppercase">{item.price}</p>
-                <button className="bg-black w-[100px] text-white rounded-md my-6 py-[10px] text-[15px] font-semibold hover:text-[#fbc531]" onClick={handleAdd}>
+                <div className="flex items-center space-x-4">
+                <IoAddCircle className="text-4xl cursor-pointer" onClick={handleAdd}/>
+                <button className="bg-black w-[100px] text-white rounded-md my-6 py-[10px] text-[15px] font-semibold hover:text-[#fbc531]" >
                   Add to cart
                 </button>
+                <FaCircleMinus className="text-3xl cursor-pointer" onClick={handleMinus}/>
+                </div>
               </div>
             </div>
           ))}
