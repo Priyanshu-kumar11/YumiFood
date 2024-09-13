@@ -70,7 +70,7 @@ const Header = ({count}) => {
         ""
       )}
       <div className="flex gap-5">
-        <p>
+       
           <div>
             <GiHamburgerMenu
               size={30}
@@ -78,11 +78,11 @@ const Header = ({count}) => {
               onClick={() => setSideNav(!sideNav)}
             />
           </div>
-        </p>
-        <p>
+       
+        
           {count}
           <FaCartShopping size={30}  />
-        </p>
+       
       </div>
     </div>
     </div>
@@ -90,16 +90,3 @@ const Header = ({count}) => {
 };
 
 export default Header;
-
-{
-  /* <div className='bg-[#f5f6fa] w-[300px] absolute top-0 right-0 text-center h-[100vh] flex items-center justify-center'>
-      <RxCross1 size={25} className='absolute top-3 right-3 cursor-pointer'/>
-        <ul className='sm:flex gap-12  cursor-pointer flex-col ' >
-          <li className='hover:text-[#fbc531]'>Home</li>
-          <li className='hover:text-[#fbc531]'>About us</li>
-          <li className='hover:text-[#fbc531]'>offers</li>
-          <li className='hover:text-[#fbc531]'>Sign in</li>
-        </ul>
-        
-      </div> */
-}

@@ -7,6 +7,7 @@ import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import SignIn from "./Components/SignIn";
 import { useState } from "react";
+import LogIn from "./Components/LogIn";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs/>} />
           <Route path="/ourfood" element={<OurFood/>} />
           <Route path="/signin" element={<SignIn/>}/>
+          <Route path="/login" element={<LogIn/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

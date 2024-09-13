@@ -1,4 +1,6 @@
 import React from "react";
+import LogIn from "./LogIn";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -20,7 +22,7 @@ const SignIn = () => {
             </h2>
             <div className="relative mb-4">
               <label
-                for="full-name"
+                htmlFor="full-name"
                 className="leading-7 text-sm text-gray-600"
               >
                 Full Name
@@ -75,6 +77,7 @@ const SignIn = () => {
             <button className="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
               Sign Up
             </button>
+            <p>Already Have An Account? <Link  to="/login" className="text-indigo-500 hover:underline">click Here</Link></p>
           </div>
         </div>
       </div>
