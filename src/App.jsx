@@ -5,9 +5,9 @@ import Header from "./Components/Header";
 import OurFood from "./Components/OurFood";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
-import SignIn from "./Components/SignIn";
+// import SignIn from "./Components/SignIn";
 import { useState } from "react";
-import LogIn from "./Components/LogIn";
+// import LogIn from "./Components/LogIn";
 
 function App() {
 
@@ -29,8 +29,8 @@ function App() {
           <Route path="/" element={<Home handleAdd={handleAdd} handleMinus={handleMinus}/>} />
           <Route path="/aboutus" element={<AboutUs/>} />
           <Route path="/ourfood" element={<OurFood/>} />
-          <Route path="/signin" element={<SignIn/>}/>
-          <Route path="/login" element={<LogIn/>}/>
+          {/* <Route path="/signin" element={<SignIn/>}/> */}
+          {/* <Route path="/login" element={<LogIn/>}/> */}
         </Routes>
         <Footer />
       </BrowserRouter>

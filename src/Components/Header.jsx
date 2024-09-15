@@ -3,10 +3,13 @@ import { FaCartShopping } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = ({count}) => {
   const [sideNav, setSideNav] = useState(false);
-
+  const { loginWithRedirect, user, isAuthenticated } = useAuth0();
+  console.log("user ", user)
+  const { logout } = useAuth0();
   
 
   return (
@@ -33,10 +36,16 @@ const Header = ({count}) => {
           <Link to={"/ourfood"}>
             <li className="hover:text-[#fbc531]">Our food</li>
           </Link>
-
+{/* 
           <Link to="/signin">
             <li className="hover:text-[#fbc531]">Sign in</li>
-          </Link>
+          </Link> */}
+          {isAuthenticated ? <>
+       <div>Welcome {user.name}</div>
+       <button className="hover:text-[#fbc531]" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+      Log Out
+    </button>
+     </> : <button className="hover:text-[#fbc531]" onClick={() => loginWithRedirect()}>Login</button>}
         </ul>
       </div>
 
@@ -61,9 +70,9 @@ const Header = ({count}) => {
             <li className="hover:text-[#fbc531]" onClick={() => setSideNav(!sideNav)}>Our food</li>
           </Link>
 
-          <Link to="/signin">
+          {/* <Link to="/signin">
             <li className="hover:text-[#fbc531]" onClick={() => setSideNav(!sideNav)}>Sign in</li>
-          </Link>
+          </Link> */}
           </ul>
         </div>
       ) : (
