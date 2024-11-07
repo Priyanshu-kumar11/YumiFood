@@ -3,12 +3,15 @@ import Hero from './Hero'
 import Delivery from './Delivery'
 import TopPicks from './TopPicks'
 
-const Home = ({handleAdd,handleMinus}) => {
+
+// redux se phle home me props the const Home = ({handleAdd,handleMinus}) 
+const Home = () => {
   return (
     <div>
       <Hero/>
       <Delivery/>
-      <TopPicks handleAdd={handleAdd} handleMinus={handleMinus}/>
+      {/* <TopPicks handleAdd={handleAdd} handleMinus={handleMinus}/> */}
+      <TopPicks/>
     </div>
   )
 }

@@ -8,7 +8,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Header = ({ count }) => {
   const [sideNav, setSideNav] = useState(false);
   const { loginWithRedirect, user, isAuthenticated } = useAuth0();
-  console.log("user ", user);
   const { logout } = useAuth0();
 
   return (
@@ -23,7 +22,7 @@ const Header = ({ count }) => {
         </div>
 
         <div>
-          <ul className="sm:flex gap-4 hidden cursor-pointer  ">
+          <ul className="sm:flex gap-4 hidden cursor-pointer">
             <Link to="/">
               <li className="hover:text-[#fbc531]">Home</li>
             </Link>
@@ -32,13 +31,10 @@ const Header = ({ count }) => {
               <li className="hover:text-[#fbc531]">About us</li>
             </Link>
 
-            <Link to={"/ourfood"}>
+            <Link to="/ourfood">
               <li className="hover:text-[#fbc531]">Our food</li>
             </Link>
-            {/* 
-          <Link to="/signin">
-            <li className="hover:text-[#fbc531]">Sign in</li>
-          </Link> */}
+
             {isAuthenticated ? (
               <>
                 <div className="text-[#fbc531]">
@@ -73,8 +69,7 @@ const Header = ({ count }) => {
               className="absolute top-3 right-3 cursor-pointer"
               onClick={() => setSideNav(!sideNav)}
             />
-
-            <ul className="flex gap-12  cursor-pointer flex-col ">
+            <ul className="flex gap-12 cursor-pointer flex-col">
               <Link to="/">
                 <li
                   className="hover:text-[#fbc531]"
@@ -83,7 +78,6 @@ const Header = ({ count }) => {
                   Home
                 </li>
               </Link>
-
               <Link to="/aboutus">
                 <li
                   className="hover:text-[#fbc531]"
@@ -92,8 +86,7 @@ const Header = ({ count }) => {
                   About us
                 </li>
               </Link>
-
-              <Link to={"/ourfood"}>
+              <Link to="/ourfood">
                 <li
                   className="hover:text-[#fbc531]"
                   onClick={() => setSideNav(!sideNav)}
@@ -101,15 +94,12 @@ const Header = ({ count }) => {
                   Our food
                 </li>
               </Link>
-
-              {/* <Link to="/signin">
-            <li className="hover:text-[#fbc531]" onClick={() => setSideNav(!sideNav)}>Sign in</li>
-          </Link> */}
             </ul>
           </div>
         ) : (
           ""
         )}
+
         <div className="flex gap-5">
           <div>
             <GiHamburgerMenu
@@ -119,8 +109,18 @@ const Header = ({ count }) => {
             />
           </div>
 
-          {count}
-          <FaCartShopping size={30} />
+          <div>
+            <Link to="/cart">
+              <div className="relative">
+                <FaCartShopping size={30} />
+                {count > 0 && (
+                  <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                    {count}
+                  </span>
+                )}
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

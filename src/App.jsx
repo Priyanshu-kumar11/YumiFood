@@ -1,36 +1,30 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./App.css";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import OurFood from "./Components/OurFood";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
-// import SignIn from "./Components/SignIn";
-import { useState } from "react";
-// import LogIn from "./Components/LogIn";
+import Cart from "./Components/Cart";
 
 function App() {
+  // Access the cart items from Redux store
+  const cartItems = useSelector((state) => state.food.cart);
 
-  const [count, setCount] = useState(0)
-  
-  const handleAdd = () => {
-    setCount(count+1)
-  }
-  const handleMinus = () => {
-    if(count>0)
-    {setCount(count-1)}
-  }
+  // Calculate the total number of items in the cart
+  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
       <BrowserRouter>
-        <Header count={count}/>
+        <Header count={cartCount} />
         <Routes>
-          <Route path="/" element={<Home handleAdd={handleAdd} handleMinus={handleMinus}/>} />
-          <Route path="/aboutus" element={<AboutUs/>} />
-          <Route path="/ourfood" element={<OurFood/>} />
-          {/* <Route path="/signin" element={<SignIn/>}/> */}
-          {/* <Route path="/login" element={<LogIn/>}/> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/ourfood" element={<OurFood />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </BrowserRouter>
